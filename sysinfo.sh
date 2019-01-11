@@ -1,5 +1,4 @@
 #!/bin/bash
-# beta v0.1.1
 
 clear
 echo '  __  __ _    _ ______ _______     _______ '
@@ -10,6 +9,7 @@ echo ' | |  | | |  | |/ /__ ____) |  | |  ____) |'
 echo ' |_|  |_|_|  |_/_____|_____/   |_| |_____/ '
 echo '             MEGAHURTZ SYSTEMS'
 echo '            System  Information'
+echo '            version v0.1.2 beta'
 sleep 1
 
 # Shows current date and time
