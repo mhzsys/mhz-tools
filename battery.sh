@@ -10,6 +10,7 @@ echo ' | |  | | |  | |/ /__ ____) |  | |  ____) |'
 echo ' |_|  |_|_|  |_/_____|_____/   |_| |_____/ '
 echo '             MEGAHURTZ SYSTEMS'
 echo '          Checking Battery Status'
+echo '            version v0.1.2 beta'
 sleep 1
 
 upower -i /org/freedesktop/UPower/devices/battery_BAT0
