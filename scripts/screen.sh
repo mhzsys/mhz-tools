@@ -15,6 +15,8 @@ sleep 1
 # Fixes screen rotation
 xrandr -o normal
 
+# xrandr --output default --mode 1366x768
+
 clear
 echo 'Screen has been fixed, have a nice day.'
 
