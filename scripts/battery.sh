@@ -10,7 +10,7 @@ echo ' | |  | | |  | |/ /__ ____) |  | |  ____) |'
 echo ' |_|  |_|_|  |_/_____|_____/   |_| |_____/ '
 echo '             MEGAHURTZ SYSTEMS'
 echo '          Checking Battery Status'
-echo '            version v0.1.2 beta'
+echo '            version v0.1.3 beta'
 sleep 1
 
 upower -i /org/freedesktop/UPower/devices/battery_BAT0
@@ -19,14 +19,14 @@ upower -i /org/freedesktop/UPower/devices/battery_BAT0
 echo 'press enter to return to menu'
 while true
 do
-    read -s -n 1 key  # -s: do not echo input character. -n 1: read only 1 character (separate with space)
+  read -s -n 1 key  # -s: do not echo input character. -n 1: read only 1 character (separate with space)
 
 # double brackets to test, single equals sign, empty string for just 'enter' in this case...
 # if [[ ... ]] is followed by semicolon and 'then' keyword
-    if [[ $key = "" ]]; then 
-        # echo 'You pressed enter!'
-        ./menu.sh
-    else
-        echo "'$key' is not a valid option."
-    fi
+  if [[ $key = "" ]]; then 
+    # echo 'You pressed enter!'
+    ./menu.sh
+  else
+    echo "'$key' is not a valid option."
+  fi
 done
