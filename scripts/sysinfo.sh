@@ -72,7 +72,7 @@ do
 # if [[ ... ]] is followed by semicolon and 'then' keyword
     if [[ $key = "" ]]; then 
         # echo 'You pressed enter!'
-        ./menue.sh
+        ./menu.sh
     else
         echo "'$key' is not a valid option."
     fi

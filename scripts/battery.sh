@@ -1,4 +1,5 @@
 #!/bin/bash
+# beta v0.1.1
 
 clear
 echo '  __  __ _    _ ______ _______     _______ '
@@ -8,15 +9,11 @@ echo ' | |\/| |  __  | / /  \___ \  \   / \___ \ '
 echo ' | |  | | |  | |/ /__ ____) |  | |  ____) |'
 echo ' |_|  |_|_|  |_/_____|_____/   |_| |_____/ '
 echo '             MEGAHURTZ SYSTEMS'
-echo '            Fix screen rotation'
+echo '          Checking Battery Status'
 echo '            version v0.1.2 beta'
 sleep 1
 
-# Fixes screen rotation
-xrandr -o normal
-
-clear
-echo 'Screen has been fixed, have a nice day.'
+upower -i /org/freedesktop/UPower/devices/battery_BAT0
 
 # Return to main menu
 echo 'press enter to return to menu'
@@ -28,7 +25,7 @@ do
 # if [[ ... ]] is followed by semicolon and 'then' keyword
     if [[ $key = "" ]]; then 
         # echo 'You pressed enter!'
-        ./menue.sh
+        ./menu.sh
     else
         echo "'$key' is not a valid option."
     fi
