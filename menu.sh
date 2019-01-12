@@ -16,7 +16,7 @@ echo '*********************'
 echo '* update  * htop    *'
 echo '* sysinfo * glances *'
 echo '* battery * wavemon *'
-echo '* screen  *         *'
+echo '* screen  * bmon    *'
 echo '*********************'
 
 echo ''
@@ -37,6 +37,8 @@ do
     glances
   elif [ $option = 'wavemon' ]; then
     wavemon
+  elif [ $option = 'bmon' ]; then
+    bmon
   else
     echo 'Not a valid option.'
   fi

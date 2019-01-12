@@ -8,7 +8,7 @@ echo ' | |\/| |  __  | / /  \___ \  \   / \___ \ '
 echo ' | |  | | |  | |/ /__ ____) |  | |  ____) |'
 echo ' |_|  |_|_|  |_/_____|_____/   |_| |_____/ '
 echo '      MEGAHURTZ SYSTEMS UPDATE SCRIPT '
-echo '           version v0.4.4 beta'
+echo '           version v0.1.9 beta'
 sleep 1
 
 echo ' Updating repo '
