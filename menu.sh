@@ -1,23 +1,23 @@
 #!/bin/bash
 
-clear
-echo '  __  __ _    _ ______ _______     _______ '
-echo ' |  \/  | |  | |___  // ____\ \   / / ____|'
-echo ' | \  / | |__| |  / /| (___  \ \_/ / (___  '
-echo ' | |\/| |  __  | / /  \___ \  \   / \___ \ '
-echo ' | |  | | |  | |/ /__ ____) |  | |  ____) |'
-echo ' |_|  |_|_|  |_/_____|_____/   |_| |_____/ '
-echo '          MEGAHURTZ SYSTEMS MENU '
-echo '           version v0.1.3 beta'
+# clear
+# echo '  __  __ _    _ ______ _______     _______ '
+# echo ' |  \/  | |  | |___  // ____\ \   / / ____|'
+# echo ' | \  / | |__| |  / /| (___  \ \_/ / (___  '
+# echo ' | |\/| |  __  | / /  \___ \  \   / \___ \ '
+# echo ' | |  | | |  | |/ /__ ____) |  | |  ____) |'
+# echo ' |_|  |_|_|  |_/_____|_____/   |_| |_____/ '
+./scripts/header-mhzsys.sh
+echo '                SYSTEM MENU '
 sleep 1
 
 echo 'Tools options'
-echo '*********************'
-echo '* update  * htop    *'
-echo '* sysinfo * glances *'
-echo '* battery * wavemon *'
-echo '* screen  * bmon    *'
-echo '*********************'
+echo '*******************************************'
+echo '* update  * htop    * tracert *           *'
+echo '* sysinfo * glances *         *           *'
+echo '* battery * wavemon *         *           *'
+echo '* screen  * bmon    *         *           *'
+echo '*******************************************'
 
 echo ''
 while true
@@ -39,6 +39,8 @@ do
     wavemon
   elif [ $option = 'bmon' ]; then
     bmon
+  elif [ $option = 'tracert' ]; then
+    ./scripts/tracert.sh
   else
     echo 'Not a valid option.'
   fi
