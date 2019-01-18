@@ -49,3 +49,8 @@ pydf
 sudo apt-get install speedometer
 speedometer -r wlo1 -t wlo1
 ```
+
+### NMAP
+```
+sudo nmap -sP -PE -PA21,23,80,3389 192.168.1.*
+```
