@@ -1,5 +1,6 @@
-# mhz-tools
-Linux administration tools
+# MegahurtZ Systems Linux Admin Tools
+Linux administration tools \
+Currently only tested to work with Ubuntu
 
 ## Update
 
