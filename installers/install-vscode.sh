@@ -22,7 +22,7 @@ echo 'setting file permissions'
 sudo chmod +x vscode.deb
 
 echo 'installing vs code'
-# sudo dpkg -i vscode.deb
+sudo dpkg -i vscode.deb
 
 echo 'removing installer'
 rm -rf vscode.deb
