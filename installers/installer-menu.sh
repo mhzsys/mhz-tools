@@ -13,37 +13,31 @@ sleep 1
 
 echo 'Tools options'
 echo '*******************************************'
-echo '* update  * htop    * tracert *           *'
-echo '* sysinfo * glances *         *           *'
-echo '* battery * wavemon *         *           *'
-echo '* screen  * bmon    *         * install   *'
+echo '* htop    * tracert *         *           *'
+echo '* glances * nodejs  *         *           *'
+echo '* bmon    *         *         *           *'
+echo '* wavemon *         *         *           *'
 echo '*******************************************'
+echo 'type menu to return to main menu'
 
 echo ''
 while true
 do
   read option
-  if [ $option = 'update' ]; then
-    ./scripts/update.sh
-  elif [ $option = 'sysinfo' ]; then
-    ./scripts/sysinfo.sh
-  elif [ $option = 'battery' ]; then
-    ./scripts/battery.sh
-  elif [ $option = 'screen' ]; then
-    ./scripts/screen.sh
-  elif [ $option = 'htop' ]; then
-    htop
+  if [ $option = 'htop' ]; then
+    ./installers/install-htop.sh
   elif [ $option = 'glances' ]; then
-    glances
-  elif [ $option = 'wavemon' ]; then
-    wavemon
+    ./installers/install-glances.sh
   elif [ $option = 'bmon' ]; then
-    bmon
-  elif [ $option = 'install' ]; then
-    # echo 'installer hit'
-    ./installers/installer-menu.sh
+    ./installers/install-bmon.sh
+  elif [ $option = 'wavemon' ]; then
+    ./installers/install-wavemon.sh
   elif [ $option = 'tracert' ]; then
-    ./scripts/tracert.sh
+    ./installers/install-mtr.sh
+  elif [ $option = 'nodejs' ]; then
+    ./installers/install-node.sh
+  elif [ $option = 'menu' ]; then
+    ./menu.sh
   else
     echo 'Not a valid option.'
   fi

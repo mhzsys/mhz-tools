@@ -9,22 +9,16 @@
 # echo ' |_|  |_|_|  |_/_____|_____/   |_| |_____/ '
 # echo '            MEGAHURTZ SYSTEMS'
 ./scripts/header-mhzsys.sh
-echo '    Node and NPM easy install for Debian'
+echo '       wavemon easy install for Ubuntu'
 sleep 1
 
 echo 'Pulling updates'
 sudo apt-get update
 
-echo 'Installing CURL'
-sudo apt-get install curl
+echo 'Installing wavemon'
+sudo apt-get install wavemon
 
-echo 'Downloading packages'
-curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
-
-echo 'Installing Node and NPM'
-sudo apt-get install -y nodejs
-
-echo 'Node installation complete'
+echo 'wavemon installation complete'
 
 # Return to main menu
 echo 'press enter to return to menu'
