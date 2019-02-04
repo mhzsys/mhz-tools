@@ -13,10 +13,10 @@ sleep 1
 
 echo 'Tools options'
 echo '*******************************************'
-echo '* htop    * tracert *         *           *'
-echo '* glances * nodejs  *         *           *'
-echo '* bmon    *         *         *           *'
-echo '* wavemon *         *         *           *'
+echo '* htop    * tracert * vbox    *           *'
+echo '* glances * nodejs  * steam   *           *'
+echo '* bmon    * chrome  *         *           *'
+echo '* wavemon * vscode  *         *           *'
 echo '*******************************************'
 echo 'type menu to return to main menu'
 
@@ -36,6 +36,14 @@ do
     ./installers/install-mtr.sh
   elif [ $option = 'nodejs' ]; then
     ./installers/install-node.sh
+  elif [ $option = 'chrome' ]; then
+    ./installers/install-chrome.sh
+  elif [ $option = 'vscode' ]; then
+    ./installers/install-vscode.sh
+  elif [ $option = 'vbox' ]; then
+    ./installers/install-vbox.sh
+  elif [ $option = 'steam' ]; then
+    ./installers/install-steam.sh
   elif [ $option = 'menu' ]; then
     ./menu.sh
   else
