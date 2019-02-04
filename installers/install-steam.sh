@@ -21,7 +21,7 @@ echo 'setting file permissions'
 sudo chmod +x steam.deb
 
 echo 'installing Steam'
-# sudo dpkg -i steam.deb
+sudo dpkg -i steam.deb
 
 echo 'removing installer'
 rm -rf steam.deb

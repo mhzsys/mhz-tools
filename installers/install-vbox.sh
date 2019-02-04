@@ -21,7 +21,7 @@ echo 'setting file permissions'
 sudo chmod +x virtualbox-6.0_6.0.4-128413~Ubuntu~bionic_amd64.deb
 
 echo 'installing Virtual Box'
-# sudo dpkg -i virtualbox-6.0_6.0.4-128413~Ubuntu~bionic_amd64.deb
+sudo dpkg -i virtualbox-6.0_6.0.4-128413~Ubuntu~bionic_amd64.deb
 
 echo 'removing installer'
 rm -rf virtualbox-6.0_6.0.4-128413~Ubuntu~bionic_amd64.deb
