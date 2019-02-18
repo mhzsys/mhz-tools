@@ -55,3 +55,6 @@ speedometer -r wlo1 -t wlo1
 ```
 sudo nmap -sP -PE -PA21,23,80,3389 192.168.1.*
 ```
+
+### Nodejs
+- https://github.com/nodesource/distributions/tree/master/deb
