@@ -58,6 +58,22 @@ echo ''
 # Check for updates
 sudo cat /var/lib/update-notifier/updates-available
 
+echo 'Checking if system needs to be restarted'
+if [ -f /var/run/reboot-required ]; then
+  echo 'reboot required'
+  echo 'type yes or y to restart now'
+  read restart
+  if [ $restart = 'yes' ] || [ $restart = 'y' ]; then
+    echo 'restarting system'
+    sleep 1
+    sudo reboot
+  else
+    echo 'please reboot system later'
+  fi
+else
+  echo 'no reboot required'
+fi
+
 # Linux version information
 #cat /etc/os-release
 
