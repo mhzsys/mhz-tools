@@ -15,21 +15,14 @@ sleep 1
 echo 'Pulling updates'
 sudo apt-get update
 
-echo 'Checking for availabe drivers'
-apt-cache search nvidia-driver
+echo 'Adding ppa for grapics drivers'
+sudo add-apt-repository ppa:grapics-drivers/ppa
 
-echo 'Ubuntu 16.04 = nvidia-384 | 18.04 = nvidia-driver-390'
-echo 'Which Version of ubuntu are you running 16.04 or 18.04?'
+echo 'Updatting repository'
+sudo apt-get update
 
-do
-  read option
-  if [ $option = '16.04' ]; then
-    sudo apt install nvidia-384
-  elif [ $option = '18.04' ]; then
-    sudo apt install nvidia-driver-390
-  else
-    echo 'Not a valid option.'
-  fi
+echo 'downloading and installing latest Nvidia driver'
+sudo apt-get install nvidia-430
 
 echo 'Nvidia Grapics installation complete'
 echo 'Please restart computer to take effect'
