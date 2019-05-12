@@ -15,8 +15,8 @@ echo 'Tools options'
 echo '*******************************************'
 echo '* htop    * tracert * vbox    *           *'
 echo '* glances * nodejs  * steam   *           *'
-echo '* bmon    * chrome  *         *           *'
-echo '* wavemon * vscode  *         *           *'
+echo '* bmon    * chrome  * hwinfo  *           *'
+echo '* wavemon * vscode  * nvidia  *           *'
 echo '*******************************************'
 echo 'type menu to return to main menu'
 
@@ -44,6 +44,10 @@ do
     ./installers/install-vbox.sh
   elif [ $option = 'steam' ]; then
     ./installers/install-steam.sh
+  elif [ $option = 'hwinfo' ]; then
+  ./installers/install-hwinfo.sh
+  elif [ $option = 'nvidia' ]; then
+  ./installers/install-nvidia.sh
   elif [ $option = 'menu' ]; then
     ./menu.sh
   else
