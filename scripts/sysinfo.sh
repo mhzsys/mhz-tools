@@ -55,6 +55,11 @@ echo 'Memory Usage:'
 free -tm
 echo ''
 
+# Check Grapics Hardware
+echo 'Grapics Hardware'
+hwinfo --gfxcard --short
+echo ''
+
 # Check for updates
 sudo cat /var/lib/update-notifier/updates-available
 
