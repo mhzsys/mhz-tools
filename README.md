@@ -11,13 +11,16 @@ Currently only tested to work with Ubuntu
 ## Screen Settings
 
 ## Change Log
-### 2019-01-11
-- Started github repo
+### 2019-05-11
+- Added new hardware information program hwinfo
+- Added installer for nvidia grapics for Ubuntu 16.04 & 18.04
 
 ### 2019-01-12
 - Created return to main menu option
 - Fixed code spacing issues
 
+### 2019-01-11
+- Started github repo
 
 ## Things to add
 ### Change termial size
@@ -54,6 +57,12 @@ speedometer -r wlo1 -t wlo1
 ### NMAP
 ```
 sudo nmap -sP -PE -PA21,23,80,3389 192.168.1.*
+```
+
+### hwinfo
+```
+hwinfo --short
+hwinfo --gfxcard --short
 ```
 
 ### Nodejs
