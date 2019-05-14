@@ -1,0 +1,6 @@
+Gnome tweaks
+install gnome tweaks with
+```
+sudo apt install gnome-tweaks
+```
+Launch Tweaks > Keyboards & Mouse > Mouse Click Emulation > Area

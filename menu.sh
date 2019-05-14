@@ -15,7 +15,7 @@ echo 'Tools options'
 echo '*******************************************'
 echo '* update  * htop    * tracert *           *'
 echo '* sysinfo * glances *         *           *'
-echo '* battery * wavemon *         *           *'
+echo '* battery * wavemon *         * notes     *'
 echo '* screen  * bmon    *         * install   *'
 echo '*******************************************'
 
@@ -44,6 +44,9 @@ do
     ./installers/installer-menu.sh
   elif [ $option = 'tracert' ]; then
     ./scripts/tracert.sh
+  elif [ $option = 'notes' ]; then
+    # echo 'installer hit'
+    ./notes/notes-menu.sh
   else
     echo 'Not a valid option.'
   fi
