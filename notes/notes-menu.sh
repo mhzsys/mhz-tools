@@ -24,10 +24,10 @@ echo ''
 while true
 do
   read option
-  if [ $option = 'tweaks' ]; then
+  if [ $option = "tweaks" ]; then
     cat notes/tweaks.txt
-  elif [ $option = 'glances' ]; then
-    ./installers/install-glances.sh
+  elif [ $option = "none" ]; then
+    echo "place holder"
   elif [ $option = 'menu' ]; then
     ./menu.sh
   else

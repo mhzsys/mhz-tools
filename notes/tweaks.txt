@@ -1,4 +1,5 @@
 Gnome tweaks
+- https://itfoss.com/fix-right-click-touchpad-ubuntu
 install gnome tweaks with
 ```
 sudo apt install gnome-tweaks
