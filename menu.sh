@@ -14,7 +14,7 @@ sleep 1
 echo 'Tools options'
 echo '*******************************************'
 echo '* update  * htop    * tracert *           *'
-echo '* sysinfo * glances *         *           *'
+echo '* sysinfo * glances *         * adduser   *'
 echo '* battery * wavemon *         * notes     *'
 echo '* screen  * bmon    *         * install   *'
 echo '*******************************************'
@@ -44,6 +44,8 @@ do
     ./installers/installer-menu.sh
   elif [ $option = 'tracert' ]; then
     ./scripts/tracert.sh
+  elif [ $option = 'adduser' ]; then
+    ./scripts/add_new_local_user.sh
   elif [ $option = 'notes' ]; then
     # echo 'installer hit'
     ./notes/notes-menu.sh
