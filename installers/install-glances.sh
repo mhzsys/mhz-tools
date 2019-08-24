@@ -9,16 +9,23 @@
 # echo ' |_|  |_|_|  |_/_____|_____/   |_| |_____/ '
 # echo '            MEGAHURTZ SYSTEMS'
 ./scripts/header-mhzsys.sh
-echo '       mtr easy install for Ubuntu'
+echo '      Glances easy install for Ubuntu'
 sleep 1
 
 echo 'Pulling updates'
 sudo apt-get update
 
-echo 'Installing mtr'
-sudo apt-get install mtr
+echo 'Installing glances'
+sudo apt install glances
 
-echo 'mtr installation complete'
+echo 'Installing pip'
+sudo apt install python-pip
+sudo apt install python3-pip
+
+echo 'Installing Glances extensions'
+pip install glances[action,browser,cloud,cpuinfo,chart,docker,export,folders,gpu,ip,raid,snmp,web,wifi]
+
+echo 'Glances installation complete'
 
 # Return to main menu
 echo 'press enter to return to menu'
