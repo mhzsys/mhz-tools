@@ -21,8 +21,9 @@ sudo add-apt-repository ppa:graphics-drivers/ppa
 echo 'Updatting repository'
 sudo apt-get update
 
+# Check with sudo ubuntu-driver list
 echo 'downloading and installing latest Nvidia driver'
-sudo apt-get install nvidia-430
+sudo apt-get install nvidia-driver-410
 
 echo 'Nvidia Grapics installation complete'
 echo 'Please restart computer to take effect'
