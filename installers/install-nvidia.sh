@@ -15,8 +15,8 @@ sleep 1
 echo 'Pulling updates'
 sudo apt-get update
 
-echo 'Adding ppa for grapics drivers'
-sudo add-apt-repository ppa:grapics-drivers/ppa
+echo 'Adding ppa for graphics drivers'
+sudo add-apt-repository ppa:graphics-drivers/ppa
 
 echo 'Updatting repository'
 sudo apt-get update
