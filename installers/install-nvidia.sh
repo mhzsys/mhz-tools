@@ -21,9 +21,13 @@ sudo add-apt-repository ppa:graphics-drivers/ppa
 echo 'Updatting repository'
 sudo apt-get update
 
-# Check with sudo ubuntu-driver list
+echo 'Available drivers'
+sudo ubuntu-driver list
+
+echo 'type the drive you wish to install:'
+input = selDriver
 echo 'downloading and installing latest Nvidia driver'
-sudo apt-get install nvidia-driver-410
+sudo apt-get install $selDriver
 
 echo 'Nvidia Grapics installation complete'
 echo 'Please restart computer to take effect'
