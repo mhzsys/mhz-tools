@@ -22,12 +22,12 @@ echo 'Updatting repository'
 sudo apt-get update
 
 echo 'Available drivers'
-sudo ubuntu-driver list
+sudo ubuntu-drivers list
 
 echo 'type the drive you wish to install:'
-input = selDriver
+read selDriver
 echo 'downloading and installing latest Nvidia driver'
-sudo apt-get install $selDriver
+sudo apt-get install ${selDriver}
 
 echo 'Nvidia Grapics installation complete'
 echo 'Please restart computer to take effect'
