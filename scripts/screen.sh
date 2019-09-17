@@ -14,7 +14,16 @@ sleep 1
 # Fixes screen rotation
 xrandr -o normal
 
-# xrandr --output default --mode 1366x768
+# Stops and removes the screen rotation sensors
+sudo systemctl stop iio-sensor-proxy.service
+sudo systemctl disable iio-sensor-proxy.service
+sudo apt-get remove iio-sensor-proxy
+
+# Another option for disabeling screen rotation in gnome
+#gsettings set org.gnome.settings-daemon.plugins.orientation active false
+
+# Command for changing screen resolution
+#xrandr --output default --mode 1366x768
 
 clear
 echo 'Screen has been fixed, have a nice day.'
