@@ -15,9 +15,19 @@ sleep 1
 xrandr -o normal
 
 # Stops and removes the screen rotation sensors
-sudo systemctl stop iio-sensor-proxy.service
-sudo systemctl disable iio-sensor-proxy.service
-sudo apt-get remove iio-sensor-proxy
+echo 'Would you like to perminantly disable auto rotate sensors?'
+echo 'Type y or yes if you would.'
+read disable
+if [ $disable = 'yes' ] || [ $disable = 'y' ]; then
+  echo 'Disabling rotation sensors'
+  sudo systemctl stop iio-sensor-proxy.service
+  sudo systemctl disable iio-sensor-proxy.service
+  sudo apt-get remove iio-sensor-proxy
+  echo 'Rotation sensors disabled'
+else
+  echo ''
+fi
+
 
 # Another option for disabeling screen rotation in gnome
 #gsettings set org.gnome.settings-daemon.plugins.orientation active false
