@@ -12,7 +12,8 @@
 echo '          Checking Battery Status'
 sleep 1
 
-upower -i /org/freedesktop/UPower/devices/battery_BAT0
+# upower -i /org/freedesktop/UPower/devices/battery_BAT0
+upower -i `upower -e | grep 'BAT'`
 
 # Return to main menu
 echo 'press enter to return to menu'
