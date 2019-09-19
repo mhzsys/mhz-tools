@@ -15,8 +15,8 @@ echo 'Easy Installers'
 echo '*******************************************'
 echo '* htop    * tracert * vbox    * tweaks    *'
 echo '* glances * nodejs  * steam   * handbrake *'
-echo '* bmon    * chrome  * hwinfo  *           *'
-echo '* wavemon * vscode  * nvidia  *           *'
+echo '* bmon    * chrome  * hwinfo  * freecad   *'
+echo '* wavemon * vscode  * nvidia  * openscad  *'
 echo '*******************************************'
 echo 'type menu to return to main menu'
 
@@ -52,6 +52,10 @@ do
   ./installers/install-tweaks.sh
   elif [ $option = 'handbrake' ]; then
   ./installers/install-handbrake.sh
+  elif [ $option = 'freecad' ]; then
+  ./installers/install-freecad.sh
+  elif [ $option = 'openscad' ]; then
+  ./installers/install-openscad.sh
   elif [ $option = 'menu' ]; then
     ./menu.sh
   else
