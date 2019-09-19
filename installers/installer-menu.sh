@@ -14,7 +14,7 @@ sleep 1
 echo 'Tools options'
 echo '*******************************************'
 echo '* htop    * tracert * vbox    * tweaks    *'
-echo '* glances * nodejs  * steam   *           *'
+echo '* glances * nodejs  * steam   * handbrake *'
 echo '* bmon    * chrome  * hwinfo  *           *'
 echo '* wavemon * vscode  * nvidia  *           *'
 echo '*******************************************'
@@ -50,6 +50,8 @@ do
   ./installers/install-nvidia.sh
   elif [ $option = 'tweaks' ]; then
   ./installers/install-tweaks.sh
+  elif [ $option = 'handbrake' ]; then
+  ./installers/install-handbrake.sh
   elif [ $option = 'menu' ]; then
     ./menu.sh
   else
