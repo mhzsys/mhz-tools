@@ -13,8 +13,8 @@ sleep 1
 
 echo 'Tools options'
 echo '*******************************************'
-echo '* update  * htop    * tracert *           *'
-echo '* sysinfo * glances *         * adduser   *'
+echo '* update  * htop    * tracert * adduser   *'
+echo '* sysinfo * glances *         * monitor   *'
 echo '* battery * wavemon *         * notes     *'
 echo '* screen  * bmon    *         * install   *'
 echo '*******************************************'
@@ -49,6 +49,9 @@ do
   elif [ $option = 'notes' ]; then
     # echo 'installer hit'
     ./notes/notes-menu.sh
+  elif [ $option = 'monitor' ]; then
+    # echo 'installer hit'
+    ./monitor/monitor-menu.sh
   else
     echo 'Not a valid option.'
   fi

@@ -8,10 +8,10 @@
 # echo ' | |  | | |  | |/ /__ ____) |  | |  ____) |'
 # echo ' |_|  |_|_|  |_/_____|_____/   |_| |_____/ '
 ./scripts/header-mhzsys.sh
-echo '                SYSTEM MENU '
+echo '              INSTALLERS MENU '
 sleep 1
 
-echo 'Tools options'
+echo 'Easy Installers'
 echo '*******************************************'
 echo '* htop    * tracert * vbox    * tweaks    *'
 echo '* glances * nodejs  * steam   * handbrake *'
