@@ -17,6 +17,7 @@ echo '* htop    * tracert * vbox    * tweaks    *'
 echo '* glances * nodejs  * steam   * handbrake *'
 echo '* bmon    * chrome  * hwinfo  * freecad   *'
 echo '* wavemon * vscode  * nvidia  * openscad  *'
+echo '* exfat   *         *         *           *'
 echo '*******************************************'
 echo 'type menu to return to main menu'
 
@@ -56,6 +57,8 @@ do
   ./installers/install-freecad.sh
   elif [ $option = 'openscad' ]; then
   ./installers/install-openscad.sh
+  elif [ $option = 'exfat' ]; then
+  ./installers/install-exfat.sh
   elif [ $option = 'menu' ]; then
     ./menu.sh
   else
