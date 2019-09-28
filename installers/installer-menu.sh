@@ -17,7 +17,7 @@ echo '* htop    * tracert * vbox    * tweaks    *'
 echo '* glances * nodejs  * steam   * handbrake *'
 echo '* bmon    * chrome  * hwinfo  * freecad   *'
 echo '* wavemon * vscode  * nvidia  * openscad  *'
-echo '* exfat   *         *         *           *'
+echo '* exfat   * mac2017 *         *           *'
 echo '*******************************************'
 echo 'type menu to return to main menu'
 
@@ -58,7 +58,9 @@ do
   elif [ $option = 'openscad' ]; then
   ./installers/install-openscad.sh
   elif [ $option = 'exfat' ]; then
-  ./installers/install-exfat.sh
+  ./installers/install-openscad.sh
+  elif [ $option = 'mac2017' ]; then
+  ./installers/install-mac2017.sh
   elif [ $option = 'menu' ]; then
     ./menu.sh
   else
