@@ -17,7 +17,7 @@ echo '* htop    * tracert * vbox    * tweaks    *'
 echo '* glances * nodejs  * steam   * handbrake *'
 echo '* bmon    * chrome  * hwinfo  * freecad   *'
 echo '* wavemon * vscode  * nvidia  * openscad  *'
-echo '* exfat   * mac2017 *         *           *'
+echo '* exfat   * mac2017 * memleak *           *'
 echo '*******************************************'
 echo 'type menu to return to main menu'
 
@@ -61,6 +61,8 @@ do
   ./installers/install-openscad.sh
   elif [ $option = 'mac2017' ]; then
   ./installers/install-mac2017.sh
+  elif [ $option = 'memleak' ]; then
+  ./installers/install-memleakfix.sh
   elif [ $option = 'menu' ]; then
     ./menu.sh
   else
