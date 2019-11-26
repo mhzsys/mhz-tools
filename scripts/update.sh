@@ -25,6 +25,7 @@ echo 'Installing updates'
 sudo apt-get upgrade -y
 sleep 1
 
+#apt --fix-broken install
 
 echo 'Checking if system needs to be restarted'
 if [ -f /var/run/reboot-required ]; then
