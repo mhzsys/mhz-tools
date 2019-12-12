@@ -14,7 +14,7 @@ sleep 1
 echo 'Notes options'
 echo '*******************************************'
 echo '* tweaks  *         *         *           *'
-echo '*         *         *         *           *'
+echo '* github  *         *         *           *'
 echo '*         *         *         *           *'
 echo '*         *         *         *           *'
 echo '*******************************************'
@@ -26,8 +26,8 @@ do
   read option
   if [ $option = "tweaks" ]; then
     cat notes/tweaks.txt
-  elif [ $option = "none" ]; then
-    echo "place holder"
+  elif [ $option = "github" ]; then
+    mdr notes/github.md
   elif [ $option = 'menu' ]; then
     ./menu.sh
   else
