@@ -14,7 +14,7 @@ sleep 1
 echo 'Tools options'
 echo '*******************************************'
 echo '* update  * htop    * tracert * adduser   *'
-echo '* sysinfo * glances *         * monitor   *'
+echo '* sysinfo * glances * zpool   * monitor   *'
 echo '* battery * wavemon *         * notes     *'
 echo '* screen  * bmon    *         * install   *'
 echo '*******************************************'
@@ -39,6 +39,8 @@ do
     wavemon
   elif [ $option = 'bmon' ]; then
     bmon
+  elif [ $option = 'zpool' ]; then
+    ./scripts/zfsCheck.sh
   elif [ $option = 'install' ]; then
     # echo 'installer hit'
     ./installers/installer-menu.sh
