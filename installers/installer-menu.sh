@@ -58,7 +58,7 @@ do
   elif [ $option = 'openscad' ]; then
   ./installers/install-openscad.sh
   elif [ $option = 'exfat' ]; then
-  ./installers/install-openscad.sh
+  ./installers/install-exfat.sh
   elif [ $option = 'mac2017' ]; then
   ./installers/install-mac2017.sh
   elif [ $option = 'memleak' ]; then
