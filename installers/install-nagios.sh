@@ -18,6 +18,12 @@ echo 'installing checks'
 #sudo nano /etc/systemd/system/update_check.service
 echo "creating service"
 
+# stop service
+sudo service update_check stop
+
+# removing service file
+sudo rm -rf /etc/systemd/system/update_check.service
+
 echo "[Unit]" >> /etc/systemd/system/update_check.service
 echo "After=network.target" >> /etc/systemd/system/update_check.service
 echo "" >> /etc/systemd/system/update_check.service
@@ -29,6 +35,11 @@ echo "WantedBy=default.target" >> /etc/systemd/system/update_check.service
 
 echo "generating script"
 
+
+
+# remove old update script
+sudo rm -rf /usr/local/bin/update_check.sh
+
 echo "#!/bin/bash
 # Version: 0.2 beta
 # Updated: 2020-10-25
@@ -38,23 +49,23 @@ echo "#!/bin/bash
 
 # Get version of ubuntu for formatting.
 # Release:        18.04
-version_info=$(lsb_release -r | awk '{print $2}')
+version_info=\$(lsb_release -r | awk '{print \$2}')
 #echo \$version_info
 
 while :
 do
    # 18 packages can be updated. 0 updates are security updates.
-   updates=$(sudo cat /var/lib/update-notifier/updates-available)
+   updates=\$(sudo cat /var/lib/update-notifier/updates-available)
 
-   software=$(echo \$updates | awk '{print $1}')
+   software=\$(echo \$updates | awk '{print \$1}')
    echo \"software updates: \"\$software > /tmp/update_status.txt
    
    if [ \$version_info == \"18.04\" ]; then
-   	security=$(echo \$updates | awk '{for (I=1;I<=NF;I++) if ($I == "updated.") {print $(I+1)};}')
+   	security=\$(echo \$updates | awk '{for (I=1;I<=NF;I++) if (\$I == \"updated.\") {print \$(I+1)};}')
    	echo \$version_info
    	echo \"security updates: \"\$security >> /tmp/update_status.txt
    elif [ \$version_info == \"20.04\" ]; then
-   	security=$(echo \$updates | awk '{for (I=1;I<=NF;I++) if ($I == "immediately.") {print $(I+1)};}')
+   	security=\$(echo \$updates | awk '{for (I=1;I<=NF;I++) if (\$I == \"immediately.\") {print \$(I+1)};}')
    	echo \$version_info
    	echo \"security updates: \"\$security >> /tmp/update_status.txt
    else
@@ -87,17 +98,17 @@ systemctl status update_check.service
 echo 'Node installation complete'
 
 # Return to main menu
-echo 'press enter to return to menu'
-while true
-do
-  read -s -n 1 key  # -s: do not echo input character. -n 1: read only 1 character (separate with space)
+# echo 'press enter to return to menu'
+# while true
+# do
+#   read -s -n 1 key  # -s: do not echo input character. -n 1: read only 1 character (separate with space)
 
-# double brackets to test, single equals sign, empty string for just 'enter' in this case...
-# if [[ ... ]] is followed by semicolon and 'then' keyword
-  if [[ $key = "" ]]; then 
-    # echo 'You pressed enter!'
-    ./installers/installer-menu.sh
-  else
-    echo "'$key' is not a valid option."
-  fi
-done
+# # double brackets to test, single equals sign, empty string for just 'enter' in this case...
+# # if [[ ... ]] is followed by semicolon and 'then' keyword
+#   if [[ $key = "" ]]; then 
+#     # echo 'You pressed enter!'
+#     ./installers/installer-menu.sh
+#   else
+#     echo "'$key' is not a valid option."
+#   fi
+# done
