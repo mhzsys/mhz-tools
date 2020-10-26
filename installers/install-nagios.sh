@@ -13,6 +13,75 @@ echo '    Nagios Ubuntu Updates Check'
 sleep 1
 
 echo 'installing checks'
+#!/bin/bash
+
+#sudo nano /etc/systemd/system/update_check.service
+echo "creating service"
+
+echo "[Unit]" >> /etc/systemd/system/update_check.service
+echo "After=network.target" >> /etc/systemd/system/update_check.service
+echo "" >> /etc/systemd/system/update_check.service
+echo "[Service]" >> /etc/systemd/system/update_check.service
+echo "ExecStart=/usr/local/bin/update_check.sh" >> /etc/systemd/system/update_check.service
+echo "" >> /etc/systemd/system/update_check.service
+echo "[Install]" >> /etc/systemd/system/update_check.service
+echo "WantedBy=default.target" >> /etc/systemd/system/update_check.service
+
+echo "generating script"
+
+echo "#!/bin/bash
+# Version: 0.2 beta
+# Updated: 2020-10-25
+# Written by: Nick Damberg
+# Perfected by: No one
+# This only works in Ubuntu
+
+# Get version of ubuntu for formatting.
+# Release:        18.04
+version_info=$(lsb_release -r | awk '{print $2}')
+#echo $version_info
+
+while :
+do
+   # 18 packages can be updated. 0 updates are security updates.
+   updates=$(sudo cat /var/lib/update-notifier/updates-available)
+
+   software=$(echo $updates | awk '{print $1}')
+   echo "software updates: "$software > /tmp/update_status.txt
+   
+   if [ $version_info == "18.04" ]; then
+   	security=$(echo $updates | awk '{for (I=1;I<=NF;I++) if ($I == "updated.") {print $(I+1)};}')
+   	echo $version_info
+   	echo "security updates: "$security >> /tmp/update_status.txt
+   elif [ $version_info == "20.04" ]; then
+   	security=$(echo $updates | awk '{for (I=1;I<=NF;I++) if ($I == "immediately.") {print $(I+1)};}')
+   	echo $version_info
+   	echo "security updates: "$security >> /tmp/update_status.txt
+   else
+   	echo "Error: Ubuntu Version"
+   	echo "security updates: error" >> /tmp/update_status.txt
+   fi
+     
+
+   if [ -f /var/run/reboot-required ]; then
+       echo "Restart: Yes" >> /tmp/update_status.txt
+   else
+       echo "Restart: No" >> /tmp/update_status.txt
+   fi
+   sleep 28800
+done" >> /usr/local/bin/update_check.sh
+
+chmod 744 /usr/local/bin/update_check.sh
+chmod 664 /etc/systemd/system/update_check.service
+systemctl daemon-reload
+systemctl enable update_check.service
+
+systemctl start update_check.service
+
+echo "DONE"
+sleep 1
+
+systemctl status update_check.service
 
 
 echo 'Node installation complete'
