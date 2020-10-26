@@ -18,6 +18,7 @@ echo '* glances * nodejs  * steam   * handbrake *'
 echo '* bmon    * chrome  * hwinfo  * freecad   *'
 echo '* wavemon * vscode  * nvidia  * openscad  *'
 echo '* exfat   * mac2017 * memleak * mkr       *'
+echo '* nagios  *         *         *           *'
 echo '*******************************************'
 echo 'type menu to return to main menu'
 
@@ -63,6 +64,8 @@ do
   ./installers/install-mac2017.sh
   elif [ $option = 'memleak' ]; then
   ./installers/install-memleakfix.sh
+  elif [ $option = 'nagios' ]; then
+  ./installers/install-nagios.sh
   elif [ $option = 'mkr' ]; then
   echo 'installing node mark down reader *requires nodejs installed'
   sudo npm install -g mdr
