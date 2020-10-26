@@ -39,34 +39,34 @@ echo "#!/bin/bash
 # Get version of ubuntu for formatting.
 # Release:        18.04
 version_info=$(lsb_release -r | awk '{print $2}')
-#echo $version_info
+#echo \$version_info
 
 while :
 do
    # 18 packages can be updated. 0 updates are security updates.
    updates=$(sudo cat /var/lib/update-notifier/updates-available)
 
-   software=$(echo $updates | awk '{print $1}')
-   echo "software updates: "$software > /tmp/update_status.txt
+   software=$(echo \$updates | awk '{print $1}')
+   echo \"software updates: \"\$software > /tmp/update_status.txt
    
-   if [ $version_info == "18.04" ]; then
-   	security=$(echo $updates | awk '{for (I=1;I<=NF;I++) if ($I == "updated.") {print $(I+1)};}')
-   	echo $version_info
-   	echo "security updates: "$security >> /tmp/update_status.txt
-   elif [ $version_info == "20.04" ]; then
-   	security=$(echo $updates | awk '{for (I=1;I<=NF;I++) if ($I == "immediately.") {print $(I+1)};}')
-   	echo $version_info
-   	echo "security updates: "$security >> /tmp/update_status.txt
+   if [ \$version_info == \"18.04\" ]; then
+   	security=$(echo \$updates | awk '{for (I=1;I<=NF;I++) if ($I == "updated.") {print $(I+1)};}')
+   	echo \$version_info
+   	echo \"security updates: \"\$security >> /tmp/update_status.txt
+   elif [ \$version_info == \"20.04\" ]; then
+   	security=$(echo \$updates | awk '{for (I=1;I<=NF;I++) if ($I == "immediately.") {print $(I+1)};}')
+   	echo \$version_info
+   	echo \"security updates: \"\$security >> /tmp/update_status.txt
    else
-   	echo "Error: Ubuntu Version"
-   	echo "security updates: error" >> /tmp/update_status.txt
+   	echo \"Error: Ubuntu Version\"
+   	echo \"security updates: error\" >> /tmp/update_status.txt
    fi
      
 
    if [ -f /var/run/reboot-required ]; then
-       echo "Restart: Yes" >> /tmp/update_status.txt
+       echo \"Restart: Yes\" >> /tmp/update_status.txt
    else
-       echo "Restart: No" >> /tmp/update_status.txt
+       echo \"Restart: No\" >> /tmp/update_status.txt
    fi
    sleep 28800
 done" >> /usr/local/bin/update_check.sh
