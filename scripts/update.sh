@@ -25,6 +25,10 @@ echo 'Installing updates'
 sudo apt-get upgrade -y
 sleep 1
 
+echo "Installing Distro updates"
+sudo apt-get dist-upgrade -y
+sleep 1
+
 #apt --fix-broken install
 
 echo 'Checking if system needs to be restarted'
