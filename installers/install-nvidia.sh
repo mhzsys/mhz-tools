@@ -21,6 +21,9 @@ sudo add-apt-repository ppa:graphics-drivers/ppa
 echo 'Updatting repository'
 sudo apt-get update
 
+echo 'Installing ubuntu-drivers'
+sudo apt-get install ubunut-drivers
+
 echo 'Available drivers'
 sudo ubuntu-drivers list
 

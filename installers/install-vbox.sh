@@ -15,16 +15,21 @@ mkdir -p installers/tmp
 
 echo 'Downloading Virtual Box Installer'
 cd installers/tmp/
-wget https://download.virtualbox.org/virtualbox/6.0.4/virtualbox-6.0_6.0.4-128413~Ubuntu~bionic_amd64.deb
+#wget https://download.virtualbox.org/virtualbox/6.0.4/virtualbox-6.0_6.0.4-128413~Ubuntu~bionic_amd64.deb
+
+#wget https://download.virtualbox.org/virtualbox/6.1.16/virtualbox-6.1_6.1.16-140961~Ubuntu~bionic_amd64.deb
+wget https://download.virtualbox.org/virtualbox/6.1.16/virtualbox-6.1_6.1.16-140961~Ubuntu~eoan_amd64.deb
+
 
 echo 'setting file permissions'
-sudo chmod +x virtualbox-6.0_6.0.4-128413~Ubuntu~bionic_amd64.deb
+sudo chmod +x virtualbox-6.1_6.1.16-140961~Ubuntu~eoan_amd64.deb
 
 echo 'installing Virtual Box'
-sudo dpkg -i virtualbox-6.0_6.0.4-128413~Ubuntu~bionic_amd64.deb
+sudo dpkg -i virtualbox-6.1_6.1.16-140961~Ubuntu~eoan_amd64.deb
+sudo apt --fix-broken install
 
 echo 'removing installer'
-rm -rf virtualbox-6.0_6.0.4-128413~Ubuntu~bionic_amd64.deb
+rm -rf virtualbox-6.1_6.1.16-140961~Ubuntu~eoan_amd64.deb
 
 echo 'Virtual Box Install Complete'
 cd ../..
