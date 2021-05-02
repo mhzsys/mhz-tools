@@ -1,3 +1,3 @@
 #!/bin/bash
 
-echo '            version v0.1.47 beta'
+echo '            version v0.1.48 beta'
