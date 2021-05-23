@@ -69,9 +69,9 @@ do
   elif [ $option = 'docker' ]; then
   ./installers/install-slack.sh
   elif [ $option = 'slack' ]; then
-  ./installers/install-speedtest.sh
+  ./installers/install-slack.sh
   elif [ $option = 'speedtest' ]; then
-  ./installers/install-docker.sh
+  ./installers/install-speedtest.sh
   elif [ $option = 'mkr' ]; then
   echo 'installing node mark down reader *requires nodejs installed'
   sudo npm install -g mdr
