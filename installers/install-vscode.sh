@@ -11,10 +11,11 @@
 echo '        VS Code Easy Installer '
 sleep 1
 
-mkdir -p installers/tmp
+CURRENTDIR=$(pwd)
+mkdir -p /tmp/installers
 
 echo 'Downloading VS Code Installer'
-cd installers/tmp/
+cd /tmp/installers/
 wget https://go.microsoft.com/fwlink/?LinkID=760868
 mv index.html?LinkID=760868 vscode.deb
 
@@ -28,7 +29,7 @@ echo 'removing installer'
 rm -rf vscode.deb
 
 echo 'VS Code Install Complete'
-cd ../..
+cd $CURRENTDIR
 
 # Return to main menu
 echo 'press enter to return to menu'

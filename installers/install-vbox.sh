@@ -11,10 +11,11 @@
 echo '        Virtual Box Easy Installer '
 sleep 1
 
-mkdir -p installers/tmp
+CURRENTDIR=$(pwd)
+mkdir -p /tmp/installers
 
 echo 'Downloading Virtual Box Installer'
-cd installers/tmp/
+cd /tmp/installers/
 #wget https://download.virtualbox.org/virtualbox/6.0.4/virtualbox-6.0_6.0.4-128413~Ubuntu~bionic_amd64.deb
 
 #wget https://download.virtualbox.org/virtualbox/6.1.16/virtualbox-6.1_6.1.16-140961~Ubuntu~bionic_amd64.deb
@@ -33,7 +34,7 @@ echo 'removing installer'
 rm -rf virtualbox-6.1_6.1.16-140961~Ubuntu~eoan_amd64.deb
 
 echo 'Virtual Box Install Complete'
-cd ../..
+cd $CURRENTDIR
 
 # Return to main menu
 echo 'press enter to return to menu'

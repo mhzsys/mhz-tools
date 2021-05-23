@@ -11,10 +11,11 @@
 echo '             Steam Easy Installer '
 sleep 1
 
-mkdir -p installers/tmp
+CURRENTDIR=$(pwd)
+mkdir -p /tmp/installers
 
 echo 'Downloading Steam Installer'
-cd installers/tmp/
+cd /tmp/installers/
 wget https://steamcdn-a.akamaihd.net/client/installer/steam.deb
 
 echo 'setting file permissions'
@@ -27,7 +28,7 @@ echo 'removing installer'
 rm -rf steam.deb
 
 echo 'Steam Install Complete'
-cd ../..
+cd $CURRENTDIR
 
 # Return to main menu
 echo 'press enter to return to menu'

@@ -18,7 +18,7 @@ echo '* glances * nodejs  * steam   * handbrake *'
 echo '* bmon    * chrome  * hwinfo  * freecad   *'
 echo '* wavemon * vscode  * nvidia  * openscad  *'
 echo '* exfat   * mac2017 * memleak * mkr       *'
-echo '* nagios  * docker  * slack   *           *'
+echo '* nagios  * docker  * slack   * speedtest *'
 echo '*******************************************'
 echo 'type menu to return to main menu'
 
@@ -69,6 +69,8 @@ do
   elif [ $option = 'docker' ]; then
   ./installers/install-slack.sh
   elif [ $option = 'slack' ]; then
+  ./installers/install-speedtest.sh
+  elif [ $option = 'speedtest' ]; then
   ./installers/install-docker.sh
   elif [ $option = 'mkr' ]; then
   echo 'installing node mark down reader *requires nodejs installed'

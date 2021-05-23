@@ -11,10 +11,12 @@
 echo '        Google Chrome Easy Installer '
 sleep 1
 
-mkdir -p installers/tmp
+CURRENTDIR=$(pwd)
+
+mkdir -p /tmp/installers
 
 echo 'Downloading Google Chrome Installer'
-cd installers/tmp/
+cd /tmp/installers/
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 
 echo 'setting file permissions'
@@ -27,7 +29,7 @@ echo 'removing installer'
 rm -rf google-chrome-stable_current_amd64.deb
 
 echo 'Google Chrome Install Complete'
-cd ../..
+cd $CURRENTDIR
 
 # Return to main menu
 echo 'press enter to return to menu'

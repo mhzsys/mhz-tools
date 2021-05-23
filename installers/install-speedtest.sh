@@ -8,25 +8,16 @@
 # echo ' | |  | | |  | |/ /__ ____) |  | |  ____) |'
 # echo ' |_|  |_|_|  |_/_____|_____/   |_| |_____/ '
 ./scripts/header-mhzsys.sh
-echo '        Slack Easy Installer '
+echo '        Speed Test Easy Installer '
 sleep 1
 
 CURRENTDIR=$(pwd)
 
-mkdir -p /tmp/installers
+echo 'Downloading Speed Test Installer'
+curl -s https://install.speedtest.net/app/cli/install.deb.sh | sudo bash
 
-echo 'Downloading slack Installer'
-cd /tmp/installers/
-wget https://downloads.slack-edge.com/linux_releases/slack-desktop-4.0.2-amd64.deb
-
-echo 'setting file permissions'
-sudo chmod +x slack-desktop-4.0.2-amd64.deb
-
-echo 'installing Slack'
-sudo apt install ./slack-desktop-*.deb
-
-echo 'removing installer'
-rm -rf slack-desktop-4.0.2-amd64.deb
+echo 'Installing Speed Test'
+sudo apt-get install speedtest
 
 echo 'Slack Install Complete'
 cd $CURRENTDIR
