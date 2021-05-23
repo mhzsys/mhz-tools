@@ -9,25 +9,32 @@
 # echo ' |_|  |_|_|  |_/_____|_____/   |_| |_____/ '
 # echo '            MEGAHURTZ SYSTEMS'
 ./scripts/header-mhzsys.sh
-echo '    Node and NPM easy install for Debian'
+echo '    Node and Docker easy install for Ubuntu'
 sleep 1
 
 echo 'Pulling updates'
 sudo apt-get update
 
-echo 'Installing CURL'
-sudo apt-get install curl
-
 echo 'Downloading packages'
-curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
+sudo apt install apt-transport-https ca-certificates curl software-properties-common
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable"
+sudo apt update
+apt-cache policy docker-ce
 
-echo 'Installing Node and NPM'
-sudo apt-get install -y nodejs
+echo 'Installing Docker'
+sudo apt install docker-ce
 
-echo 'Installing common npm packages'
-sudo npm install -g nodemon live-server -y
+echo 'Setting permissions'
+sudo usermod -aG docker ${USER}
 
-echo 'Node installation complete'
+echo 'Checking docker status'
+sudo service docker start
+sleep 2
+sudo service docker status
+
+echo 'Docker installation complete'
+echo 'NOTE: you will have to log out and back in for your user to be added to the docker group'
 
 # Return to main menu
 echo 'press enter to return to menu'

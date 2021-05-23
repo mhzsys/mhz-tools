@@ -18,7 +18,7 @@ echo '* glances * nodejs  * steam   * handbrake *'
 echo '* bmon    * chrome  * hwinfo  * freecad   *'
 echo '* wavemon * vscode  * nvidia  * openscad  *'
 echo '* exfat   * mac2017 * memleak * mkr       *'
-echo '* nagios  *         *         *           *'
+echo '* nagios  * docker  *         *           *'
 echo '*******************************************'
 echo 'type menu to return to main menu'
 
@@ -66,6 +66,8 @@ do
   ./installers/install-memleakfix.sh
   elif [ $option = 'nagios' ]; then
   ./installers/install-nagios.sh
+  elif [ $option = 'docker' ]; then
+  ./installers/install-docker.sh
   elif [ $option = 'mkr' ]; then
   echo 'installing node mark down reader *requires nodejs installed'
   sudo npm install -g mdr
