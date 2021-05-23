@@ -24,3 +24,5 @@ read TESTPATH
 dd if=$TESTPATH of=sometestfile bs=1M count=1000
 # Read
 dd if=sometestfile of=$TESTPATH bs=1M count=1000
+
+rm -rf "$TESTPATH/sometestfile"
