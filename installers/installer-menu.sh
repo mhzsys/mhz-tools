@@ -70,6 +70,8 @@ do
   ./installers/install-slack.sh
   elif [ $option = 'slack' ]; then
   ./installers/install-slack.sh
+  elif [ $option = 'zoom' ]; then
+  ./installers/install-zoom.sh
   elif [ $option = 'speedtest' ]; then
   ./installers/install-speedtest.sh
   elif [ $option = 'mkr' ]; then

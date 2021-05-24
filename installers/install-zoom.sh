@@ -7,34 +7,29 @@
 # echo ' | |\/| |  __  | / /  \___ \  \   / \___ \ '
 # echo ' | |  | | |  | |/ /__ ____) |  | |  ____) |'
 # echo ' |_|  |_|_|  |_/_____|_____/   |_| |_____/ '
-# echo '            MEGAHURTZ SYSTEMS'
 ./scripts/header-mhzsys.sh
-echo '    Node and Docker easy install for Ubuntu'
+echo '        Zoom Easy Installer '
 sleep 1
 
-echo 'Pulling updates'
-sudo apt-get update
+CURRENTDIR=$(pwd)
 
-echo 'Downloading packages'
-sudo apt install apt-transport-https ca-certificates curl software-properties-common
-curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
-sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable"
-sudo apt update
-apt-cache policy docker-ce
+mkdir -p /tmp/installers
 
-echo 'Installing Docker'
-sudo apt install docker-ce -y
+echo 'Downloading Google Chrome Installer'
+cd /tmp/installers/
+wget https://zoom.us/client/latest/zoom_amd64.deb
 
-echo 'Setting permissions'
-sudo usermod -aG docker ${USER}
+echo 'setting file permissions'
+sudo chmod +x zoom_amd64.deb
 
-echo 'Checking docker status'
-sudo service docker start
-sleep 2
-sudo service docker status
+echo 'installing google chrome'
+sudo dpkg -i zoom_amd64.deb
 
-echo 'Docker installation complete'
-echo 'NOTE: you will have to log out and back in for your user to be added to the docker group'
+echo 'removing installer'
+rm -rf zoom_amd64.deb
+
+echo 'Google Chrome Install Complete'
+cd $CURRENTDIR
 
 # Return to main menu
 echo 'press enter to return to menu'
