@@ -15,7 +15,7 @@ echo 'Tools options'
 echo '*******************************************'
 echo '* update  * htop    * tracert * adduser   *'
 echo '* sysinfo * glances * zpool   * monitor   *'
-echo '* battery * wavemon *         * notes     *'
+echo '* battery * wavemon * PTest   * notes     *'
 echo '* screen  * bmon    *         * install   *'
 echo '*******************************************'
 
@@ -51,6 +51,9 @@ do
   elif [ $option = 'notes' ]; then
     # echo 'installer hit'
     ./notes/notes-menu.sh
+  elif [ $option = 'PTest' ]; then
+    # echo 'installer hit'
+    ./performance_test/pt_run.sh
   elif [ $option = 'monitor' ]; then
     # echo 'installer hit'
     ./monitor/monitor-menu.sh
