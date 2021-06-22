@@ -35,6 +35,13 @@ echo "export PATH=$PATH:$GOPATH/bin"
 
 source ~/.bashrc
 
+cd ~
+mkdir go
+cd go
+mkdir bin pkg src
+mkdir src/github.com
+
+cd ~mhz-tools
 echo 'Golang installation complete'
 
 # Return to main menu
