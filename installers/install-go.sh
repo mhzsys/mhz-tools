@@ -33,7 +33,7 @@ echo "export GOPATH=/home/ndamberg/go"
 echo "export PATH=$PATH:$GOPATH/bin"
 ) 2>&1 | sudo tee -a "~.bashrc"
 
-source ~/.bashrc
+source ~.bashrc
 
 cd ~
 mkdir go
