@@ -19,7 +19,7 @@ echo '* bmon    * chrome  * hwinfo  * freecad   *'
 echo '* wavemon * vscode  * nvidia  * openscad  *'
 echo '* exfat   * mac2017 * memleak * mkr       *'
 echo '* nagios  * docker  * slack   * speedtest *'
-echo '* obs     *         *         *           *'
+echo '* obs     * go      *         *           *'
 echo '*******************************************'
 echo 'type menu to return to main menu'
 
@@ -75,6 +75,8 @@ do
   ./installers/install-zoom.sh
   elif [ $option = 'obs' ]; then
   ./installers/install-zoom.sh
+  elif [ $option = 'go' ]; then
+  ./installers/install-go.sh
   elif [ $option = 'obs' ]; then
   ./installers/install-speedtest.sh
   elif [ $option = 'mkr' ]; then
