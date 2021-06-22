@@ -23,15 +23,14 @@ echo 'Extracing Golang'
 sudo tar -C /usr/local -xzf go1.16.5.linux-amd64.tar.gz
 
 echo 'Installing bashrc exports'
-(
-echo ""
-echo "# Golang"
-echo "export GOROOT=/usr/local/go"
-echo "export PATH=$PATH:$GOROOT/bin"
-echo ""
-echo "export GOPATH=/home/ndamberg/go"
-echo "export PATH=$PATH:$GOPATH/bin"
-) 2>&1 | sudo tee -a "~.bashrc"
+
+echo "" >> ~/.bashrc
+echo "# Golang" >> ~/.bashrc
+echo "export GOROOT=/usr/local/go" >> ~/.bashrc
+echo "export PATH=$PATH:$GOROOT/bin" >> ~/.bashrc
+echo "" >> ~/.bashrc
+echo "export GOPATH=/home/ndamberg/go" >> ~/.bashrc
+echo "export PATH=$PATH:$GOPATH/bin" >> ~/.bashrc
 
 source ~/.bashrc
 
@@ -41,7 +40,12 @@ cd go
 mkdir bin pkg src
 mkdir src/github.com
 
-cd ~mhz-tools
+echo "What is your Github username:"
+read ghuser
+
+mkdir src/github.com/$ghuser
+
+cd ~/mhz-tools
 echo 'Golang installation complete'
 
 # Return to main menu
