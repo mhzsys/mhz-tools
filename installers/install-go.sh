@@ -31,8 +31,8 @@ sudo tar -C /usr/local -xzf $GOVERSION.$OS-$ARCH.tar.gz
 
 echo 'Installing profile'
 
-echo "# Golang" ~/.profile
-echo "export PATH=$PATH:/usr/local/go/bin" >> ~/.profile
+echo "# Golang" >> ~/.profile
+echo 'export PATH=$PATH:/usr/local/go/bin' >> ~/.profile
 # echo "export PATH=$PATH:$GOROOT/bin" >> ~/.bashrc
 # echo "" >> ~/.bashrc
 # echo "export GOPATH=/usr/local/go/bin" >> ~/.bashrc
