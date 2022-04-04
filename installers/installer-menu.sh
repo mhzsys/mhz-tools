@@ -78,7 +78,7 @@ do
   elif [ $option = 'go' ]; then
   ./installers/install-go.sh
   elif [ $option = 'java' ]; then
-  ./installers/install-java16.sh
+  ./installers/install-java17.sh
   elif [ $option = 'obs' ]; then
   ./installers/install-speedtest.sh
   elif [ $option = 'mkr' ]; then

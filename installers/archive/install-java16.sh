@@ -9,32 +9,25 @@
 # echo ' |_|  |_|_|  |_/_____|_____/   |_| |_____/ '
 # echo '            MEGAHURTZ SYSTEMS'
 ./scripts/header-mhzsys.sh
-echo '    Node and Docker easy install for Ubuntu'
+echo '         java16 easy install for Ubuntu'
 sleep 1
 
 echo 'Pulling updates'
 sudo apt-get update
 
 echo 'Downloading packages'
-sudo apt install apt-transport-https ca-certificates curl software-properties-common
-curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
-sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable"
-sudo apt update
-apt-cache policy docker-ce
+sudo apt-get install software-properties-common -y
+sudo add-apt-repository ppa:linuxuprising/java
+sudo apt-get update
+sudo echo "deb http://ppa.launchpad.net/linuxuprising/java/ubuntu focal main" | tee /etc/apt/sources.list.d/linuxuprising-java.list
+apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 73C3DB2A
+sudo apt-get update
 
-echo 'Installing Docker'
-sudo apt install docker-ce -y
 
-echo 'Setting permissions'
-sudo usermod -aG docker ${USER}
+echo 'Installing Java16'
+sudo apt install oracle-java16-installer --install-recommends -y
 
-echo 'Checking docker status'
-sudo service docker start
-sleep 2
-sudo service docker status
-
-echo 'Docker installation complete'
-echo 'NOTE: you will have to log out and back in for your user to be added to the docker group'
+echo 'Java16 installation complete'
 
 # Return to main menu
 echo 'press enter to return to menu'
