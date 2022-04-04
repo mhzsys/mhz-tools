@@ -29,17 +29,16 @@ wget https://golang.org/dl/$GOVERSION.$OS-$ARCH.tar.gz
 echo 'Extracing Golang'
 sudo tar -C /usr/local -xzf $GOVERSION.$OS-$ARCH.tar.gz
 
-echo 'Installing bashrc exports'
+echo 'Installing profile'
 
-echo "" >> ~/.bashrc
-echo "# Golang" >> ~/.bashrc
-echo "export GOROOT=/usr/local/go" >> ~/.bashrc
-echo "export PATH=$PATH:$GOROOT/bin" >> ~/.bashrc
-echo "" >> ~/.bashrc
-echo "export GOPATH=/usr/local/go/bin" >> ~/.bashrc
-echo "export PATH=$PATH:$GOPATH/bin" >> ~/.bashrc
+echo "# Golang" ~/.profile
+echo "export PATH=$PATH:/usr/local/go/bin" >> ~/.profile
+# echo "export PATH=$PATH:$GOROOT/bin" >> ~/.bashrc
+# echo "" >> ~/.bashrc
+# echo "export GOPATH=/usr/local/go/bin" >> ~/.bashrc
+# echo "export PATH=$PATH:$GOPATH/bin" >> ~/.bashrc
 
-source ~.bashrc
+source ~/.profile
 
 cd ~
 mkdir go
