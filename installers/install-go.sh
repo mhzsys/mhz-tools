@@ -12,15 +12,16 @@
 # echo '            MEGAHURTZ SYSTEMS'
 ./scripts/header-mhzsys.sh
 echo '    Golang easy install for Debian'
+
+echo 'Pulling updates'
+sudo apt-get update
+sudo apt-get install curl
+
+echo 'Downloading packages'
 GOVERSION=$( curl "https://go.dev/VERSION?m=text" )
 OS="linux"
 ARCH="amd64"
 sleep 1
-
-echo 'Pulling updates'
-sudo apt-get update
-
-echo 'Downloading packages'
 echo "Installing GO version: $GOVERSION"
 cd /tmp
 wget https://golang.org/dl/$GOVERSION.$OS-$ARCH.tar.gz
