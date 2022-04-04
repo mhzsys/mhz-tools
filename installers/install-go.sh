@@ -12,7 +12,7 @@
 # echo '            MEGAHURTZ SYSTEMS'
 ./scripts/header-mhzsys.sh
 echo '    Golang easy install for Debian'
-GOVERSION=$( curl https://go.dev/VERSION?m=text )
+GOVERSION=curl https://go.dev/VERSION?m=text
 OS="linux"
 ARCH="amd64"
 sleep 1
