@@ -1,4 +1,6 @@
 #!/bin/bash
+# https://go.dev/doc/install
+# https://www.digitalocean.com/community/tutorials/how-to-install-go-on-ubuntu-20-04
 
 # clear
 # echo '  __  __ _    _ ______ _______     _______ '
@@ -10,17 +12,21 @@
 # echo '            MEGAHURTZ SYSTEMS'
 ./scripts/header-mhzsys.sh
 echo '    Golang easy install for Debian'
+GOVERSION=$( curl https://go.dev/VERSION?m=text )
+OS="linux"
+ARCH="amd64"
 sleep 1
 
 echo 'Pulling updates'
 sudo apt-get update
 
 echo 'Downloading packages'
+echo "Installing GO version: $GOVERSION"
 cd /tmp
-wget https://golang.org/dl/go1.16.5.linux-amd64.tar.gz
+wget https://golang.org/dl/$GOVERSION.$OS-$ARCH.tar.gz
 
 echo 'Extracing Golang'
-sudo tar -C /usr/local -xzf go1.16.5.linux-amd64.tar.gz
+sudo tar -C /usr/local -xzf $GOVERSION.$OS-$ARCH.tar.gz
 
 echo 'Installing bashrc exports'
 
@@ -29,7 +35,7 @@ echo "# Golang" >> ~/.bashrc
 echo "export GOROOT=/usr/local/go" >> ~/.bashrc
 echo "export PATH=$PATH:$GOROOT/bin" >> ~/.bashrc
 echo "" >> ~/.bashrc
-echo "export GOPATH=/home/ndamberg/go" >> ~/.bashrc
+echo "export GOPATH=/usr/local/go/bin" >> ~/.bashrc
 echo "export PATH=$PATH:$GOPATH/bin" >> ~/.bashrc
 
 source ~.bashrc
@@ -46,6 +52,7 @@ read ghuser
 mkdir src/github.com/$ghuser
 
 cd ~/mhz-tools
+go version
 echo 'Golang installation complete'
 
 # Return to main menu
