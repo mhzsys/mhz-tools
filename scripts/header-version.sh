@@ -1,3 +1,3 @@
 #!/bin/bash
-
-echo '            version v0.1.67 beta'
+readonly VERSION="0.1.$( git rev-list --count HEAD )"
+echo "            version v$VERSION beta"
