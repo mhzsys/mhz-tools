@@ -22,6 +22,8 @@ GOVERSION=$( curl "https://go.dev/VERSION?m=text" )
 OS="linux"
 ARCH="amd64"
 sleep 1
+echo "removing old go installation"
+sudo rm -rf /usr/local/go
 echo "Installing GO version: $GOVERSION"
 cd /tmp
 wget https://golang.org/dl/$GOVERSION.$OS-$ARCH.tar.gz
