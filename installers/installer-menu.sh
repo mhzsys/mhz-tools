@@ -19,7 +19,7 @@ echo '* bmon    * chrome  * hwinfo  * freecad   *'
 echo '* wavemon * vscode  * nvidia  * openscad  *'
 echo '* exfat   * mac2017 * memleak * mkr       *'
 echo '* nagios  * docker  * slack   * speedtest *'
-echo '* obs     * go      * java    *           *'
+echo '* obs     * go      * java    * pve-qemu  *'
 echo '*******************************************'
 echo 'type menu to return to main menu'
 
@@ -81,6 +81,8 @@ do
   ./installers/install-java17.sh
   elif [ $option = 'obs' ]; then
   ./installers/install-speedtest.sh
+  elif [ $option = 'pve-qemu' ]; then
+  ./installers/install-pve-guest-additions.sh
   elif [ $option = 'mkr' ]; then
   echo 'installing node mark down reader *requires nodejs installed'
   sudo npm install -g mdr
