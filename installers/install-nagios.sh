@@ -41,8 +41,8 @@ echo "generating script"
 sudo rm -rf /usr/local/bin/update_check.sh
 
 echo "#!/bin/bash
-# Version: 0.2 beta
-# Updated: 2020-10-25
+# Version: 0.3 beta
+# Updated: 2022-02-03
 # Written by: Nick Damberg
 # Perfected by: No one
 # This only works in Ubuntu
@@ -65,6 +65,10 @@ do
    	echo \$version_info
    	echo \"security updates: \"\$security >> /tmp/update_status.txt
    elif [ \$version_info == \"20.04\" ]; then
+   	security=\$(echo \$updates | awk '{for (I=1;I<=NF;I++) if (\$I == \"immediately.\") {print \$(I+1)};}')
+   	echo \$version_info
+   	echo \"security updates: \"\$security >> /tmp/update_status.txt
+   elif [ \$version_info == \"22.04\" ]; then
    	security=\$(echo \$updates | awk '{for (I=1;I<=NF;I++) if (\$I == \"immediately.\") {print \$(I+1)};}')
    	echo \$version_info
    	echo \"security updates: \"\$security >> /tmp/update_status.txt
