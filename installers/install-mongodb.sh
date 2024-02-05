@@ -28,9 +28,9 @@ RELEASE=$(cat /etc/lsb-release | grep "DISTRIB_RELEASE")
 echo $RELEASE
 
 echo 'Downloading packages'
-if [$RELEASE = 'DISTRIB_RELEASE=20.04']; then
+if [ $RELEASE = 'DISTRIB_RELEASE=20.04' ]; then
   echo "deb [ arch=amd64,arm64 signed-by=/usr/share/keyrings/mongodb-server-7.0.gpg ] https://repo.mongodb.org/apt/ubuntu focal/mongodb-org/7.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-7.0.list
-elif [$RELEASE = 'DISTRIB_RELEASE=22.04']; then
+elif [ $RELEASE = 'DISTRIB_RELEASE=22.04' ]; then
   echo "deb [ arch=amd64,arm64 signed-by=/usr/share/keyrings/mongodb-server-7.0.gpg ] https://repo.mongodb.org/apt/ubuntu jammy/mongodb-org/7.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-7.0.list
 else
   echo "Version not currently supported"
