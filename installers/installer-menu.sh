@@ -20,6 +20,7 @@ echo '* wavemon * vscode  * nvidia  * openscad  *'
 echo '* exfat   * mac2017 * memleak * mkr       *'
 echo '* nagios  * docker  * slack   * speedtest *'
 echo '* obs     * go      * java    * pve-qemu  *'
+echo '* mongodb *         *         *           *'
 echo '*******************************************'
 echo 'type menu to return to main menu'
 
@@ -81,6 +82,8 @@ do
   ./installers/install-java17.sh
   elif [ $option = 'obs' ]; then
   ./installers/install-speedtest.sh
+  elif [ $option = 'mongodb' ]; then
+  ./installers/install-mongodb.sh
   elif [ $option = 'pve-qemu' ]; then
   ./installers/install-pve-guest-additions.sh
   elif [ $option = 'mkr' ]; then
