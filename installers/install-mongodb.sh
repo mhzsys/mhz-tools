@@ -16,7 +16,7 @@ echo 'Pulling updates'
 sudo apt-get update
 
 echo 'Installing CURL'
-sudo apt-get install gnupg curl
+sudo apt-get install gnupg curl -y
 
 #Import mogodb public GPG key
 curl -fsSL https://www.mongodb.org/static/pgp/server-7.0.asc | sudo gpg -o /usr/share/keyrings/mongodb-server-7.0.gpg --dearmor
