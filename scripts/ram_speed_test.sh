@@ -4,7 +4,7 @@
 block_size=100M
 
 # Set the number of blocks to read/write
-num_blocks=10000
+num_blocks=1000
 
 # Function to perform the test
 perform_test() {
