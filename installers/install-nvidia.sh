@@ -22,10 +22,10 @@ echo 'Updatting repository'
 sudo apt-get update
 
 echo 'Installing ubuntu-drivers'
-sudo apt-get install ubunut-drivers
+sudo apt-get install ubuntu-drivers
 
 echo 'Available drivers'
-sudo ubuntu-drivers list
+6
 
 echo 'type the drive you wish to install:'
 read selDriver

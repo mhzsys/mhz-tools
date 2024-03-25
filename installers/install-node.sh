@@ -19,7 +19,7 @@ echo 'Installing CURL'
 sudo apt-get install curl
 
 echo 'Downloading packages'
-curl -sL https://deb.nodesource.com/setup_18.x | sudo -E bash -
+curl -sL https://deb.nodesource.com/setup_20.x | sudo -E bash -
 
 echo 'Installing Node and NPM'
 sudo apt-get install -y nodejs
