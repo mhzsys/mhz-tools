@@ -44,6 +44,7 @@ sudo apt-get install -y mongodb-org
 
 echo 'Starting MongoDB'
 sudo systemctl start mongod
+sudo systemctl enable --now mongod
 
 echo 'MongoDB installation complete'
 
