@@ -29,6 +29,12 @@ echo "Installing Distro updates"
 sudo apt-get dist-upgrade -y
 sleep 1
 
+echo "Cleaning up old files"
+sudo apt clean
+sudo apt autoclean
+sudo apt autoremove -y
+sleep 1
+
 #apt --fix-broken install
 
 echo 'Checking if system needs to be restarted'
