@@ -16,7 +16,7 @@ echo '*******************************************'
 echo '* update  * htop    * tracert * adduser   *'
 echo '* sysinfo * glances * zpool   * monitor   *'
 echo '* battery * wavemon * PTest   * notes     *'
-echo '* screen  * bmon    *         * install   *'
+echo '* screen  * bmon    * netdata * install   *'
 echo '*******************************************'
 
 echo ''
@@ -27,6 +27,8 @@ do
     ./scripts/update.sh
   elif [ $option = 'sysinfo' ]; then
     ./scripts/sysinfo.sh
+  elif [ $option = 'netdata' ]; then
+    ./scripts/update_netdata.sh
   elif [ $option = 'battery' ]; then
     ./scripts/battery.sh
   elif [ $option = 'screen' ]; then
