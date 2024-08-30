@@ -11,31 +11,31 @@
 echo '               UPDATE SCRIPT '
 sleep 1
 
-echo ' Updating repo '
+echo ' ***Updating repo '
 git pull origin master
 
 sleep 1
 
-echo 'Checking for updates'
+echo '***Checking for updates'
 sudo apt-get update
 sudo cat /var/lib/update-notifier/updates-available
 sleep 1
 
-echo 'Installing updates'
+echo '***Installing updates'
 sudo apt-get upgrade -y
 sleep 1
 
-echo "Installing Distro updates"
+echo "***Installing Distro updates"
 sudo apt-get dist-upgrade -y
 sleep 1
 
-echo "Cleaning up old files"
+echo "***Cleaning up old files"
 sudo apt clean
 sudo apt autoclean
 sudo apt autoremove -y
 sleep 1
 
-echo "Checking/Updating Netdata"
+echo "***Checking/Updating Netdata"
 
 # Function to check if netdata is installed
 is_netdata_installed() {
