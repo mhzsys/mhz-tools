@@ -35,6 +35,35 @@ sudo apt autoclean
 sudo apt autoremove -y
 sleep 1
 
+echo "Checking/Updating Netdata"
+
+# Function to check if netdata is installed
+is_netdata_installed() {
+    if [ -d "/etc/netdata" ]; then
+        return 0 # Netdata is installed
+    else
+        return 1 # Netdata is not installed
+    fi
+}
+
+# Function to update netdata
+update_netdata() {
+    wget -O /tmp/netdata-kickstart.sh https://get.netdata.cloud/kickstart.sh && sh /tmp/netdata-kickstart.sh
+}
+
+# Main function to check and update netdata if installed
+manage_netdata() {
+    if is_netdata_installed; then
+        echo "Netdata is installed. Updating..."
+        update_netdata
+    else
+        echo "Netdata is not installed."
+    fi
+}
+
+# Run the manage_netdata function
+manage_netdata
+
 #apt --fix-broken install
 
 echo 'Checking if system needs to be restarted'
