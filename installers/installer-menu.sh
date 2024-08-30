@@ -69,7 +69,7 @@ do
   elif [ $option = 'nagios' ]; then
   ./installers/install-nagios.sh
   elif [ $option = 'docker' ]; then
-  ./installers/install-slack.sh
+  ./installers/install-docker.sh
   elif [ $option = 'slack' ]; then
   ./installers/install-slack.sh
   elif [ $option = 'zoom' ]; then
