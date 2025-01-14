@@ -70,6 +70,8 @@ do
   ./installers/install-nagios.sh
   elif [ $option = 'docker' ]; then
   ./installers/install-docker.sh
+  elif [ $option = 'portainer' ]; then
+  ./installers/install-portainer.sh
   elif [ $option = 'slack' ]; then
   ./installers/install-slack.sh
   elif [ $option = 'zoom' ]; then
