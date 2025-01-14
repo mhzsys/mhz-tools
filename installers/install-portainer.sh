@@ -29,6 +29,7 @@ function is_docker_installed() {
         return 1
     fi
 }
+is_docker_installed
 
 cd $CURRENTDIR
 
