@@ -17,10 +17,10 @@ echo 'Verifying Docker is installed'
 function is_docker_installed() {
     if command -v docker >/dev/null 2>&1; then
         echo 'Creating Docker Volume'
-        docker volume create portainer_data
+        sudo docker volume create portainer_data
 
         echo 'Setting up and running docker container'
-        docker run -d -p 8000:8000 -p 9443:9443 --name portainer --restart=always -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer-ce:2.21.5
+        sudo docker run -d -p 8000:8000 -p 9443:9443 --name portainer --restart=always -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer-ce:2.21.5
 
         echo 'Portainer Install Complete'
         return 0
@@ -29,7 +29,7 @@ function is_docker_installed() {
         return 1
     fi
 }
-is_docker_installed
+is_docker_installeds
 
 cd $CURRENTDIR
 
