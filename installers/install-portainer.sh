@@ -69,18 +69,31 @@ function update_portainer() {
         # Stop & remove existing container
         if [[ "$CONTAINER_EXISTS" == true ]]; then
             echo "🛑 Stopping and removing existing Portainer container..."
-            docker stop "$PORTAINER_NAME" 2>/dev/null || true
-            docker rm "$PORTAINER_NAME" 2>/dev/null || true
-        else
-            echo "🚀 Installing Portainer v$TARGET_VERSION..."
-        fi
+            
+            # Try to stop (force if needed)
+            if docker ps -q -f name="^/$PORTAINER_NAME$" | grep -q .; then
+                docker stop "$PORTAINER_NAME" 2>/dev/null || \
+                docker kill "$PORTAINER_NAME" 2>/dev/null || true
+            fi
 
-        # Remove old image to save space (optional but recommended)
-        local old_image
-        old_image=$(docker images --format '{{.Repository}}:{{.Tag}}' | grep "^portainer/portainer-ce" | head -1)
-        if [[ -n "$old_image" ]]; then
-            echo "🗑️ Removing old Portainer image: $old_image"
-            docker rmi "$old_image" 2>/dev/null || echo "⚠️ Failed to remove old image (may still be in use)."
+            # Wait a moment for graceful stop
+            sleep 2
+
+            # Force removal (handles stopped/failed/ghost containers)
+            docker rm -f "$PORTAINER_NAME" 2>/dev/null || {
+                echo "⚠️ WARNING: Failed to remove container '$PORTAINER_NAME'. Trying cleanup strategies..."
+                
+                # Alternative: rename if in conflict, then remove
+                if ! docker rm "$PORTAINER_NAME" 2>/dev/null; then
+                    local random_suffix=$(head -c 4 /dev/urandom | base64 | head -c 6)
+                    local new_name="${PORTAINER_NAME}_old_${random_suffix}"
+                    echo "🔄 Renaming old container to '$new_name'..."
+                    docker rename "$PORTAINER_NAME" "$new_name" 2>/dev/null || true
+                    # Now try rm again
+                    docker rm "$new_name" 2>/dev/null || echo "❌ Could not remove old container."
+                fi
+            }
+            echo "✅ Old container removed (if existed)."
         fi
 
         # Pull latest image with explicit tag
