@@ -1,6 +1,6 @@
 #!/bin/bash
 
 sudo apt-get update
-sudo apt-get install qemu-guest-agent
-
-echo "Restart Host for changes to take effect!"
+sudo apt install -y qemu-guest-agent
+sudo systemctl enable qemu-guest-agent
+sudo systemctl start qemu-guest-agent
